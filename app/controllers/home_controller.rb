@@ -8,7 +8,11 @@ class HomeController < ApplicationController
 
   def create
     @post=Post.new(content:params[:content])
-    @post.save
-    redirect_to("/home/show")
+    if @post.save
+      @post.save
+      redirect_to("/home/show")
+    else
+      render("/home/post")
+    end
   end
 end
