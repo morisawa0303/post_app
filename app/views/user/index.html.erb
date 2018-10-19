@@ -1,4 +1,7 @@
 <% @users.each do |user|%>
 
-<%= link_to(user.name,"/user/#{user.id}/show")%>
+<ul class="list-group">
+  <li class="list-group-item"><%= link_to(user.name,"/user/#{user.id}/show")%></li>
+</ul>
+
 <%end%>
