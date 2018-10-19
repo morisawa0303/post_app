@@ -20,7 +20,6 @@ class HomeController < ApplicationController
       content: get_post_params[:content],
       user_id: @now_user.id
     )
- 
     if @post.save
       flash[:notice]="書き込みました"
       redirect_to("/home")
@@ -29,6 +28,9 @@ class HomeController < ApplicationController
      end
   end
 
+ def get_post_params
+  params.require(:post).permit(:content)
+ end
 
 
 end
