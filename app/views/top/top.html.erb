@@ -1,5 +1,5 @@
 <h1>ようこそ</h1>
-<div class="menu">
+  <div class="menu">
 <%if session[:user_id]%>
   
     <%= link_to "このサイトについて","top/description"%>
@@ -8,7 +8,9 @@
     <%= link_to "ログアウト","/logout",{method: :post}%>
 <%else%>
     <%= link_to "このサイトについて","top/description"%>
+    <%= link_to "掲示板を覗く","/home/"%>
+    <%= link_to "ユーザー一覧","/user/index"%>
     <%= link_to "新規登録","/user/signup"%>
     <%= link_to "ログイン","/login"%>
 <%end%>
-</div>
+  </div>
