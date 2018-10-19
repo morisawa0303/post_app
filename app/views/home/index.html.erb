@@ -1,7 +1,9 @@
-<%=link_to("書き込む","/home/post")%>
+
+
+
 <% @posts.each do |post|%>
-<div class="post-item">
-<%= link_to(post.content,"/home/#{post.id}/show") %>
-</div>
+<ul class="list-group">
+  <li class="list-group-item"><%= link_to(post.content,"/home/#{post.id}/show") %></li>
+</ul>
 <%end%>
 <%=link_to("書き込む","/home/post")%>
