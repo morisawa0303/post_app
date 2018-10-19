@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get '/' => 'top#top'
   get '/top/description' => 'top#description'
 
-  get '/home/show' => 'home#show'
+  get '/home/' => 'home#index'
+  get '/home/:id' => 'home#show'
   get '/home/post' => 'home#post'
 
   post '/home/create' => 'home#create'

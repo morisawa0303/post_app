@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
-  def show
+  def index
     @posts=Post.all
+  end
+
+  def show
+    @post=Post.find_by(id: params[:id])
   end
 
   def post
