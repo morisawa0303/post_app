@@ -16,7 +16,8 @@ class UserController < ApplicationController
   end
 
   def update
-    if User.update(get_user_params)
+    @user = User.find(params[:id])
+    if @user.update(get_user_params)
       flash[:notice]="更新しました"
       redirect_to("/")
     else
