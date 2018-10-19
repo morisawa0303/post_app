@@ -9,8 +9,6 @@ class UserController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @posts = @user.test
-    #@post=Post.find_by(id: params[:id])
-    #@user=User.find_by(id: @post.user_id)
   end
 
   def new
@@ -31,7 +29,8 @@ class UserController < ApplicationController
       flash[:notice]="更新しました"
       redirect_to("/")
     else
-      render("/user/edit/#{@user.id}")
+      #render("/user/#{@user.id}/edit")
+      redirect_back(fallback_location: "/")
     end
   end
 
@@ -41,7 +40,7 @@ class UserController < ApplicationController
       flash[:notice]="新規登録しました"
       redirect_to("/")
     else
-      render("/user/new")
+      render("/user/signup")
     end
   end
 
@@ -50,11 +49,12 @@ class UserController < ApplicationController
   end
 
   def login_form
+    @user
   end
 
   def login
     @user=User.find_by(mail: params[:mail],password: params[:pass])
-    @mail=params[:mail]
+    #@mail=params[:mail]
     if @user
       session[:user_id]=@user.id
       flash[:notice]="ログインしました"
