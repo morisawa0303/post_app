@@ -1,4 +1,4 @@
 <% @users.each do |user|%>
 
-<%= link_to(user.name,"/user/show/#{user.id}")%>
+<%= link_to(user.name,"/user/#{user.id}/show")%>
 <%end%>

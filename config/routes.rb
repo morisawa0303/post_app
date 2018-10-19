@@ -7,15 +7,15 @@ Rails.application.routes.draw do
   get '/home' => 'home#index'
   get '/home/post' => 'home#post'
   post '/home/create' => 'home#create'
-  get '/home/show/:id' => 'home#show'
+  get '/home/:id/show' => 'home#show'
  
 
   get '/user/index' => 'user#index'
   get '/user/signup' => 'user#new'
-  get '/user/show/:id' => 'user#show'
-  get '/user/edit/:id' => 'user#edit'
+  get '/user/:id/show' => 'user#show'
+  get '/user/:id/edit' => 'user#edit'
   post '/user/create' => 'user#create'
-  patch '/user/update' => 'user#update'
+  patch '/user/:id/update' => 'user#update'
 
   get '/login' => 'user#login_form'
   post '/login' => 'user#login'
