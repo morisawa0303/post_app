@@ -1,8 +1,19 @@
 <h1>新規登録</h1>
-<div class="input">
-    <p>名前</p>
-    <input>
-    <p>メールアドレス</p>
-    <input>
-    <p><button type="submit">登録</p>
-</div>
+<%= form_for @user,url: "/user/create" do |u|%>
+
+  <div class="field">
+      <%= u.label :name,"名前" %>
+      <br>
+      <%= u.text_field :name %>
+    </div>
+
+      <div class="field">
+      <%= u.label :mail,"メールアドレス" %>
+      <br>
+      <%= u.text_field :mail %>
+    </div>
+
+    <div class="actions">
+      <%= u.submit "登録" %>
+    </div>
+<%end%>
