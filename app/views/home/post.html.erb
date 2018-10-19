@@ -1,5 +1,13 @@
+<%= form_for @post, url: "/home/create" do |p|%>
 
-<%=form_tag("/home/create") do%>
-<textarea name="content">></textarea>
-<p><button type="submit">投稿</p>
+  <div class="field">
+      <%= p.text_area :content %>
+    </div>
+
+    <div class="actions">
+      <%= p.submit "投稿" %>
+    </div>
 <%end%>
+
+
+

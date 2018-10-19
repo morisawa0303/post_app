@@ -4,15 +4,19 @@ class HomeController < ApplicationController
   end
 
   def post
+    @post=Post.new
   end
 
   def create
-    @post=Post.new(content:params[:content])
+    @post=Post.new(params)
     if @post.save
-      @post.save
       redirect_to("/home/show")
     else
       render("/home/post")
     end
+  end
+
+  def params
+    params.require(:post).permit(:content)
   end
 end
