@@ -20,5 +20,20 @@ class UserController < ApplicationController
   def get_user_params
     params.require(:user).permit(:name,:mail)
   end
+
+  def login_form
+  end
+
+  def login
+    @user=User.find_by(mail: params[:mail],password: params[:pass])
+    @mail=params[:mail]
+    if @user
+      flash[:notice]="ログインしました"
+      redirect_to("/home")
+    else
+      
+      render("user/login_form")
+    end
+  end
 end
 
