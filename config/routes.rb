@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
+
   get '/' => 'top#top'
   get '/top/description' => 'top#description'
 
+  
   get '/home/' => 'home#index'
-  get '/home/:id' => 'home#show'
   get '/home/post' => 'home#post'
+  get '/home/show/:id' => 'home#show'
+  
 
   post '/home/create' => 'home#create'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get '/user/index' => 'user#index'
+  get '/user/signup' => 'user#new'
 end

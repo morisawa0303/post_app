@@ -1,6 +1,6 @@
 <% @posts.each do |post|%>
 <div class="post-item">
-<%= link_to(post.content,"/home/#{post.id}") %>
+<%= link_to(post.content,"/home/show/#{post.id}") %>
 </div>
 <%end%>
 <%=link_to("書き込む","/home/post")%>
