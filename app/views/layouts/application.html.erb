@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <% if flash[:notice]%>
+    <%= flash[:notice]%>
+    <%end%>
+    
+    <%if @now_user%>
+    <p>現在ログインしてるユーザー <%= link_to(@now_user.name,"/user/#{@now_user.id}/show") %></p>
+    <%end%>
     <%= yield %>
   </body>
 </html>

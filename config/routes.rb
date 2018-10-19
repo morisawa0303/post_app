@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'post/index'
   get '/' => 'top#top'
   get '/top/description' => 'top#description'
 

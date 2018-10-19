@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+  before_action :authenticate_user,{only:[:index,:show,:edit]}
+  before_action :forbid_login_user,{only:[:new,:login_form]}
+
   def index
     @users=User.all
   end
@@ -13,6 +16,10 @@ class UserController < ApplicationController
 
   def edit
     @user = User.find_by(id: params[:id])
+    if @user!=@now_user
+      flash[:notice]="不正なアクセスです"
+      redirect_to("/") 
+    end
   end
 
   def update
