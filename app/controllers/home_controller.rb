@@ -8,23 +8,27 @@ class HomeController < ApplicationController
 
   def show
     @post=Post.find_by(id: params[:id])
+    @user=User.find_by(id: @post.user_id)
   end
 
   def post
     @post=Post.new
   end
-
+  
   def create
-    @post=Post.new(get_post_params)
+    @post = Post.new(
+      content: get_post_params[:content],
+      user_id: @now_user.id
+    )
+ 
     if @post.save
       flash[:notice]="書き込みました"
       redirect_to("/home")
     else
       render("/home/post")
-    end
+     end
   end
 
-  def get_post_params
-    params.require(:post).permit(:content)
-  end
+
+
 end
