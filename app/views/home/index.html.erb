@@ -1,3 +1,8 @@
+<% if flash[:notice]%>
+  <%= flash[:notice]%>
+<%end%>
+
+<%=link_to("書き込む","/home/post")%>
 <% @posts.each do |post|%>
 <div class="post-item">
 <%= link_to(post.content,"/home/show/#{post.id}") %>

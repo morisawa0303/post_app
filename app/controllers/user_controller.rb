@@ -3,14 +3,32 @@ class UserController < ApplicationController
     @users=User.all
   end
 
+  def show
+    @user = User.find_by(id: params[:id])
+  end
+
   def new
     @user=User.new
   end
-  
+
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
+  def update
+    @user=User.date(get_user_params)
+    if @user.save
+      flash[:notice]="更新しました"
+      redirect_to("/")
+    else
+      render("/user/edit/#{@user.id}")
+    end
+  end
 
   def create
     @user=User.new(get_user_params)
     if @user.save
+      flash[:notice]="新規登録しました"
       redirect_to("/")
     else
       render("/user/new")
@@ -18,7 +36,7 @@ class UserController < ApplicationController
   end
 
   def get_user_params
-    params.require(:user).permit(:name,:mail)
+    params.require(:user).permit(:name,:mail,:password)
   end
 
   def login_form
@@ -28,12 +46,19 @@ class UserController < ApplicationController
     @user=User.find_by(mail: params[:mail],password: params[:pass])
     @mail=params[:mail]
     if @user
+      session[:user_id]=@user.id
       flash[:notice]="ログインしました"
-      redirect_to("/home")
+      redirect_to("/")
     else
       
       render("user/login_form")
     end
+  end
+
+  def logout
+    session[:user_id]=nil
+    flash[:notice]="ログアウトしました"
+    redirect_to("/")
   end
 end
 

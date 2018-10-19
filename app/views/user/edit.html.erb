@@ -1,14 +1,12 @@
-<h1>新規登録</h1>
 <%= form_for @user,url: "/user/create" do |u|%>
 
-  <div class="field">
+    <div class="field">
       <%= u.label :name,"名前" %>
       <br>
-      
       <%= u.text_field :name %>
     </div>
 
-      <div class="field">
+    <div class="field">
       <%= u.label :mail,"メールアドレス" %>
       <br>
       <%= u.text_field :mail %>
@@ -24,7 +22,9 @@
       
 
     <div class="actions">
-      <%= u.submit "登録" %>
+      <%= u.submit "更新" %>
     </div>
-
 <%end%>
+
+
+
