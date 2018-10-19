@@ -1,7 +1,9 @@
 
 <%= @user.name %>
 <%= @user.mail%>
-
+<% @posts.each do |post| %>
+    <%= link_to(post.content, "/home/#{post.id}/show/") %>
+<%end%>
 <%if @user==@now_user%>
     <%= link_to("編集","/user/#{@user.id}/edit")%>
 <%end%>

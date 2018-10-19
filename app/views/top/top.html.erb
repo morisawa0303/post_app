@@ -1,15 +1,34 @@
+<div class="welcome">
 <h1>ようこそ</h1>
-<div class="menu">
-<%if session[:user_id]%>
-    <%= link_to "このサイトについて","top/description"%>
-    <%= link_to "掲示板を覗く","/home/"%>
-    <%= link_to "ユーザー一覧","/user/index"%>
-    <%= link_to "ログアウト","/logout",{method: :post}%>
-<%else%>
-    <%= link_to "このサイトについて","top/description"%>
-    <%= link_to "新規登録","/user/signup"%>
-    <%= link_to "ログイン","/login"%>
-<%end%>
 </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+            <li class="nav-item active">
+                <%if session[:user_id]%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="top/description">このサイトについて</a>
+                        <a class="nav-link" href="/home/">掲示板を覗く</a>
+                        <a class="nav-link" href="/user/index">ユーザー一覧"</a>
+                        <a class="nav-link" href="/logout">aaa</a>
+                        <%= link_to "ログアウト", { :controller => "user", :action => "logout" },method: :post, { :class => "nav-link" }  %>
+                        <%= link_to 'プロフィール', @profile, class: "btn btn-large", id: "profile-btn" %>
+                    </li>
+                <%else%>     
+                    <li class="nav-item">
+                        <a class="nav-link" href="top/description">このサイトについて</a>
+                        <a class="nav-link" href="/user/signup">新規登録</a>
+                        <a class="nav-link" href="/login">ログイン</a>
+                    </li>
+                <%end%>                
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+
 
 

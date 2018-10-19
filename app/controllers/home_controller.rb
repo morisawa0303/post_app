@@ -31,6 +31,4 @@ class HomeController < ApplicationController
  def get_post_params
   params.require(:post).permit(:content)
  end
-
-
 end
