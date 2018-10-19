@@ -1,11 +1,14 @@
 class HomeController < ApplicationController
-  def top
-  end
-
   def show
     @posts=Post.all
   end
 
-  def description
+  def post
+  end
+
+  def create
+    @post=Post.new(content:params[:content])
+    @post.save
+    redirect_to("/home/show")
   end
 end
