@@ -11,9 +11,7 @@
                         <a class="nav-link" href="top/description">このサイトについて</a>
                         <a class="nav-link" href="/home/">掲示板を覗く</a>
                         <a class="nav-link" href="/user/index">ユーザー一覧"</a>
-                        <a class="nav-link" href="/logout">aaa</a>
-                        <%= link_to "ログアウト", { :controller => "user", :action => "logout" },method: :post, { :class => "nav-link" }  %>
-                        <%= link_to 'プロフィール', @profile, class: "btn btn-large", id: "profile-btn" %>
+                        <%= link_to "ログアウト", "/logout",method: :post, :class => "nav-link"  %>
                     </li>
                 <%else%>     
                     <li class="nav-item">
