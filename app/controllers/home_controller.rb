@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   end
 
   def create
-    @post=Post.new(params)
+    @post=Post.new(get_post_params)
     if @post.save
       redirect_to("/home/show")
     else
@@ -16,7 +16,7 @@ class HomeController < ApplicationController
     end
   end
 
-  def params
+  def get_post_params
     params.require(:post).permit(:content)
   end
 end
