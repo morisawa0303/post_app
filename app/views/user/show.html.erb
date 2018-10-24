@@ -7,8 +7,7 @@
 
 <p><%= @user.name %>さんの投稿</p>
 <% @posts.each do |post| %>
-    <ul class="list-group">
-    
+    <ul class="list-group">    
         <li class="list-group-item"><%= link_to(post.content, "/home/#{post.id}/show/") %></li>
     </ul>
 <%end%>

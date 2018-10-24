@@ -64,3 +64,5 @@ gem 'coffee-script-source', '1.12.2'
 gem "bootstrap_form", ">= 4.0.0.alpha1"
 
 gem 'bcrypt'
+
+gem 'mysql2'

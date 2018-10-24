@@ -114,6 +114,8 @@ GEM
     msgpack (1.2.4)
     msgpack (1.2.4-x64-mingw32)
     multi_json (1.13.1)
+    mysql2 (0.5.2)
+    mysql2 (0.5.2-x64-mingw32)
     nio4r (2.3.1)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
@@ -216,6 +218,7 @@ DEPENDENCIES
   coffee-script-source (= 1.12.2)
   jbuilder (~> 2.5)
   jquery-rails
+  mysql2
   puma (~> 3.11)
   rails (~> 5.2.1)
   sass-rails (~> 5.0)
