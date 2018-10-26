@@ -9,15 +9,15 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password: luka3989
+  password: Fh4xli2uTF
 
 development:
   adapter: mysql2
   encoding: utf8
-  database: TWINS_COM
+  database: POST_APP
   pool: 5
   username: root
-  password: luka3989
+  password: Fh4xli2uTF
   host: localhost
 
 
