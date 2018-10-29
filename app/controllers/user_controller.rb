@@ -40,7 +40,7 @@ class UserController < ApplicationController
       flash[:notice]="新規登録しました"
       redirect_to("/")
     else
-      render("/user/signup")
+      redirect_to("/user/signup")
     end
   end
 
