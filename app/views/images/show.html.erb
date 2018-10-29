@@ -1,14 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Message:</strong>
+<div class="alert alert-primary" role="alert">
   <%= @image.message %>
-</p>
-
-<p>
-  <strong>Image path:</strong>
   <%= image_tag(@image.image_path_url) %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Edit', edit_image_path(@image) %>
+
 <%= link_to 'Back', images_path %>
+
+
+
+
+
