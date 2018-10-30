@@ -2,7 +2,9 @@
 
 <div class="alert alert-primary" role="alert">
   <%= @image.message %>
-  <%= image_tag(@image.image_path_url) %>
+  <p>
+  <%= image_tag(@image.image_path_url(:thumb)) %>
+</p>
 </div>
 
 <%= link_to 'Edit', edit_image_path(@image) %>
