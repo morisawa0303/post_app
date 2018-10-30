@@ -66,3 +66,7 @@ gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'bcrypt'
 
 gem 'mysql2'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
