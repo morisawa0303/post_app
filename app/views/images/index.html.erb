@@ -12,17 +12,12 @@
 
   <tbody>
     <% @images.each do |image| %>
-      <tr>
-        <td><%= image.message %></td>
-        <td><%= image.image_path %></td>
-        <td><%= link_to 'Show', image %></td>
-        <td><%= link_to 'Edit', edit_image_path(image) %></td>
-        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: '画像を消しますか?' } %></td>
-      </tr>
+      <ul class="list-group">
+        <li class="list-group-item"></p><%= image.message %></li>
+        <li class="list-group-item"><%= link_to 'Show', image %><%= link_to 'Edit', edit_image_path(image) %><%= link_to 'Destroy', image, method: :delete, data: { confirm: '画像を消しますか?' } %></li>
+      </ul> 
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New Image', new_image_path %>
