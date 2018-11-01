@@ -1,7 +1,6 @@
-
-<%= @user.name %>
-<%= @user.mail%>
 <%if @user==@now_user%>
+    <%= @user.name %>
+    <%= @user.mail%>
     <%= link_to("編集","/user/#{@user.id}/edit")%>
 <%end%>
 

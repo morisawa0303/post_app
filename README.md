@@ -1,24 +1,47 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+各バージョン
+Ruby 2.4.4
+Ruby on Rails 5.2.1
+MySQL 5.7.24
+Bootstrap 4.1.3
 
-Things you may want to cover:
+post_appとは
+　今回作ったアプリは掲示板をイメージして作成。掲示板として何が必要かを考えた結果投稿機能は絶対に必要。　
+会員制のアプリにしようということで新規登録機能、ログイン、アウト機能の追加、アカウント情報の閲覧、編集機能、画像投稿機能を付けた。
 
-* Ruby version
+ページ解説
 
-* System dependencies
+TOP画面
+　各リンクへ飛べます。
 
-* Configuration
+ログイン前後で選択できるリンクが変わります。
 
-* Database creation
+新規登録画面
+　メニューの新規登録をクリックすることで新規登録の入力フォーム画面に移行します。（名前、メールアドレス、パスワード）
+入力後TOPページに遷移します。
+いずれかの入力がない場合はリダイレクトされます。
 
-* Database initialization
+ログイン画面
+　登録したメールアドレスとパスワードを入力しログインします。
+ログインできなかった場合はリダイレクトされます。
 
-* How to run the test suite
+閲覧画面
+　今まで投稿されたつぶやきを見ることができます。また投稿をクリックすると誰が投稿したかを確認することができます。
 
-* Services (job queues, cache servers, search engines, etc.)
+投稿画面
+　つぶやきと画像を投稿することができます。
+投稿ボタンを押すと閲覧画面に遷移し投稿が更新されるようになっています。
 
-* Deployment instructions
+140文字以上、または未入力の場合はリダイレクトされます。
 
-* ...
+ユーザー一覧画面
+　登録されているユーザーの一覧が表示されます。
+名前を選択するとユーザー情報閲覧画面へ遷移します。
+
+ユーザー情報閲覧画面
+該当ユーザーの投稿を確認できます。
+自身のユーザーページには編集のリンクが出現、名前とメールアドレスの表示、アカウント情報の編集が行えます。
+
+ログアウト画面
+現在保持しているユーザー情報を破棄しTOPにリダイレクト。
