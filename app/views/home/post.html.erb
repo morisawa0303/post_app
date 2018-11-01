@@ -5,6 +5,10 @@
       <%= p.text_area :content, label: "入力してください" %>
     </div>
 
+    <div class="field">
+      <%= p.file_field :image_path,id: :message_image_path%>
+    </div>
+
     <div class="actions">
       <%= p.submit "投稿" %>
     </div>
