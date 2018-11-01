@@ -31,6 +31,5 @@ vender/bundle
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-public/uploads/image/image_path/3/スクリーンショット__40_.png
-public/uploads/image/image_path/4/shutterstock_178630004-480x321.jpg
-public/uploads/image/image_path/5/スクリーンショット__43_.png
+
+/public/uploads/post/image_path
