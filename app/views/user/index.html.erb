@@ -1,7 +1,15 @@
-<% @users.each do |user|%>
+<%= search_form_for @user,url:'/user/index' do |f| %>
+  <%= f.label :ユーザー検索 %>
+  <%= f.search_field :name_cont %>
+  <%= f.submit %>
+<% end %>
 
-<ul class="list-group">
-  <li class="list-group-item"><%= link_to(user.name,"/user/#{user.id}/show")%></li>
-</ul>
-
-<%end%>
+<table>
+  <tbody>
+    <% @users.each do |user| %>
+      <ul class="list-group">
+        <li class="list-group-item"><%= link_to(user.name,"/user/#{user.id}/show") %></li>
+      </ul>
+    <% end %>
+  </tbody>
+</table>

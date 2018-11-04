@@ -3,7 +3,8 @@ class UserController < ApplicationController
   before_action :forbid_login_user,{only:[:new,:login_form]}
 
   def index
-    @users=User.all
+    @user = User.ransack(params[:q])
+    @users = @user.result.order(created_at: :desc)
   end
 
   def show
