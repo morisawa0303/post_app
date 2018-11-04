@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   before_action :authenticate_user
   
   def index
-    @posts=Post.all.order(created_at: :desc)
+    @post = Post.ransack(params[:q])
+    @posts = @post.result.order(created_at: :desc)
   end
 
   def show

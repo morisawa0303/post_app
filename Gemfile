@@ -69,3 +69,5 @@ gem 'mysql2'
 
 gem 'carrierwave'
 
+gem 'ransack'
+

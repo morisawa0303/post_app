@@ -1,6 +1,17 @@
 <%=link_to("書き込む","/home/post")%>
-<% @posts.each do |post|%>
-<ul class="list-group">
-  <li class="list-group-item"><%= link_to(post.content,"/home/#{post.id}/show") %></li>
-</ul>
-<%end%>
+<br><br>
+<%= search_form_for @post,url:'/home' do |f| %>
+  <%= f.label :投稿検索 %>
+  <%= f.search_field :content_cont %>
+  <%= f.submit %>
+<% end %>
+
+<table>
+  <tbody>
+    <% @posts.each do |post| %>
+      <ul class="list-group">
+        <li class="list-group-item"><%= link_to(post.content,"/home/#{post.id}/show") %></li>
+      </ul>
+    <% end %>
+  </tbody>
+</table>
