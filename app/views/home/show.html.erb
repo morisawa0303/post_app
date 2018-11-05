@@ -9,3 +9,12 @@
 </p>
 
 <p>投稿者 <%=@user.name%> </p>
+
+<%if @now_user.id==@post.user_id%>
+  <%= link_to("/home/#{@post.id}/destroy",{method:"post"}) do %>
+     <button type="button" class="btn btn-outline-primary">
+       <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> 削除
+     </button>
+  <% end %>
+
+<%end%>

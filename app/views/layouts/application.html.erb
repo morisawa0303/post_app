@@ -11,15 +11,19 @@
   </head>
 
   <body>
-    <%=link_to("TOP画面へ戻る","/")%>
-    <div class="login">
-    <%if @now_user%>
-        <p>現在ログインしてるユーザー <%= link_to(@now_user.name,"/user/#{@now_user.id}/show") %></p>
-    <%end%>
-    </div>
-    <%= yield %>
     <% if flash[:notice]%>
       <%= flash[:notice]%>
+     <br> 
     <%end%>
+    
+    <%=link_to("TOP画面へ戻る","/")%>
+    <div class="login">
+      <%if @now_user%>
+        <p>現在ログインしてるユーザー <%= link_to(@now_user.name,"/user/#{@now_user.id}/show") %></p>
+      <%end%>
+    </div>
+
+    <%= yield %>
+
   </body>
 </html>

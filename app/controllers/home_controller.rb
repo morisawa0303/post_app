@@ -15,6 +15,13 @@ class HomeController < ApplicationController
   def post
     @post=Post.new
   end
+
+  def destroy
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    flash[:notice]="削除しました"
+    redirect_to("/home")
+  end
   
   def create
     @post = Post.new(

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/home/post' => 'home#post'
   post '/home/create' => 'home#create'
   get '/home/:id/show' => 'home#show'
- 
+  post "/home/:id/destroy" => "home#destroy"
 
   get '/user/index' => 'user#index'
   get '/user/signup' => 'user#new'
