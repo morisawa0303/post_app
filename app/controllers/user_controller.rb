@@ -9,7 +9,7 @@ class UserController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @posts = @user.test.order(created_at: :desc)
+    @posts = @user.mypost.order(created_at: :desc)
   end
 
   def new

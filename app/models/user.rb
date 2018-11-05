@@ -6,7 +6,7 @@ class User < ApplicationRecord
     validates :mail,{presence: true}
     validates :password,{presence: true}
 
-    def test
+    def mypost
         return Post.where(user_id: self.id)
     end
 end
