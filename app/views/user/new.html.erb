@@ -1,20 +1,24 @@
 <h1>新規登録</h1>
 <%= bootstrap_form_for @user,url: "/user/create" do |u|%>
 
-    <div class="field">
-      <%= u.text_field :name, label: "名前" %>
-    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <%= u.text_field :name, label: "名前" %>
+        </div>
 
-    <div class="field">
-      <%= u.email_field :mail, label: "メールアドレス" %>
-    </div>
+        <div class="col-md-8 offset-2">
+            <%= u.email_field :mail, label: "メールアドレス" %>
+        </div>
 
-      <div class="field">
-        <%= u.password_field :password, label: "パスワード" %>
-      </div>
-      
-    <div class="actions">
-      <%= u.submit "登録" %>
+        <div class="col-md-8 offset-2">
+            <%= u.password_field :pass, label: "パスワード" %>
+        </div>
+    
+        <div class="col-md-8 offset-2">
+            <%= u.submit "登録" %>
+        </div>
     </div>
+</div>
 
 <%end%>

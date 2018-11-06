@@ -1,7 +1,17 @@
 <%= bootstrap_form_tag url: '/login' do |f| %>
-    <%= f.email_field :mail%>
-    <%= f.password_field :pass%>
-    <%= f.submit :ログイン %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <%= f.email_field :mail%>
+            </div>
+            <div class="col-md-8 offset-2" >
+                <%= f.password_field :pass%>
+            </div>
+            <div class="col-md-8 offset-2">
+                <%= f.submit :ログイン %>
+            </div>
+        </div>
+    </div>
 <% end %>
 
 
